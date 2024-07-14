@@ -1,6 +1,5 @@
 import 'package:date_picker_plus/date_picker_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:preuba_tecnica/controllers/reservation_provider.dart';
 import 'package:preuba_tecnica/widgets/common/atoms/primary_button.dart';
 import 'package:preuba_tecnica/widgets/common/atoms/pt_label.dart';
@@ -31,27 +30,6 @@ class SelectDateAndHourWidget extends StatefulWidget {
 
 class _SelectDateAndHourWidgetState extends State<SelectDateAndHourWidget>
     with SingleTickerProviderStateMixin {
-  bool isOpenDate = false;
-
-  final TextEditingController timeController = TextEditingController();
-
-  bool isPickerStartTimeShow = false;
-  bool isPickerFinishTimeShow = false;
-
-  DateTime _selectedDate = DateTime.now();
-
-  String _getFormattedDate(DateTime dateTime) {
-    // Establece el formato de fecha deseado
-    final DateFormat formatter = DateFormat('dd/MM/yyyy');
-    return formatter.format(dateTime);
-  }
-
-  void _onDateSelected(DateTime value) {
-    setState(() {
-      _selectedDate = value;
-      widget.dateController.text = _getFormattedDate(value);
-    });
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -93,25 +93,4 @@ class ReservationProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> saveReservation() async {
-    if (!isFormFilled) {
-      return;
-    }
-
-    final reservationData = {
-      'date': selectedDate,
-      'startTime': startTime,
-      'endTime': endTime,
-      'comment': commentController.text,
-    };
-
-    try {
-      dateController.clear();
-      startTimeController.clear();
-      endTimeController.clear();
-      commentController.clear();
-
-      notifyListeners();
-    } catch (error) {}
-  }
 }
