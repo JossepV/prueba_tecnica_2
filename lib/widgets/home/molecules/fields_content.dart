@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:preuba_tecnica/models/fields_model.dart';
+import 'package:preuba_tecnica/screens/reservation_screen.dart';
 import 'package:preuba_tecnica/widgets/common/atoms/primary_button.dart';
 import 'package:preuba_tecnica/widgets/common/atoms/pt_label.dart';
-import 'package:preuba_tecnica/widgets/home_screen.dart/atoms/field_date_section.dart';
-import 'package:preuba_tecnica/widgets/home_screen.dart/atoms/fields_avalible_section.dart';
-import 'package:preuba_tecnica/widgets/home_screen.dart/atoms/header_content_fields.dart';
+import 'package:preuba_tecnica/widgets/home/atoms/field_date_section.dart';
+import 'package:preuba_tecnica/widgets/home/atoms/fields_avalible_section.dart';
+import 'package:preuba_tecnica/widgets/home/atoms/header_content_fields.dart';
 
 class FieldsContent extends StatelessWidget {
   const FieldsContent({super.key, required this.model});
@@ -42,7 +43,14 @@ class FieldsContent extends StatelessWidget {
             child: PrimaryButton(
               colorLabel: Colors.white,
               label: 'Reservar',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ReservationScreen(),
+                  ),
+                );
+              },
               height: 40,
               radius: 8,
             ),

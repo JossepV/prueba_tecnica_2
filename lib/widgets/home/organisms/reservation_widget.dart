@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:preuba_tecnica/models/reservation_model.dart';
 import 'package:preuba_tecnica/widgets/common/atoms/background_picture.dart';
-import 'package:preuba_tecnica/widgets/home_screen.dart/molecules/reservation_content.dart';
+import 'package:preuba_tecnica/widgets/home/molecules/reservation_content.dart';
 
 class ReservationWidget extends StatelessWidget {
   const ReservationWidget({super.key, required this.model});
@@ -13,7 +13,7 @@ class ReservationWidget extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       alignment: Alignment.center,
       width: double.infinity,
-      height: 115,
+      height: 125,
       color: Colors.blueGrey.withOpacity(0.2),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,7 +21,7 @@ class ReservationWidget extends StatelessWidget {
           BackgroundPicture(
             height: 50,
             width: 50,
-            imageUrl: model.field.imageUrl,
+            imageUrl: model.field.imagesUrl[0],
           ),
           const SizedBox(
             width: 10,

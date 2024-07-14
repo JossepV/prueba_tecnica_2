@@ -1,7 +1,7 @@
 class FieldsModel {
   final int id;
   final String name;
-  final String imageUrl;
+  final List<String> imagesUrl;
   final String type;
   final String date;
   final String startTime;
@@ -9,11 +9,12 @@ class FieldsModel {
   final String climate;
   final bool available;
   final double pricePerHour;
+  final String location;
 
   FieldsModel({
     required this.id,
     required this.name,
-    required this.imageUrl,
+    required this.imagesUrl,
     required this.type,
     required this.date,
     required this.finishTime,
@@ -21,5 +22,6 @@ class FieldsModel {
     required this.climate,
     required this.available,
     required this.pricePerHour,
+    required this.location,
   });
 }

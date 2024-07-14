@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:preuba_tecnica/screens/home_screen.dart';
+import 'package:preuba_tecnica/screens/login_screen.dart';
 import 'package:preuba_tecnica/widgets/common/atoms/custom_icon_button.dart';
 import 'package:preuba_tecnica/widgets/common/atoms/primary_button.dart';
 import 'package:preuba_tecnica/widgets/common/atoms/pt_label.dart';
@@ -66,7 +66,7 @@ class RegistroScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const HomeScreen()),
+                        MaterialPageRoute(builder: (context) => const LoginScreen()),
                       );
                     },
                     colorLabel: Colors.white,

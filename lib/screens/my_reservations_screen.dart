@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:preuba_tecnica/data_mock/mock_repository.dart';
-import 'package:preuba_tecnica/screens/login_screen.dart';
+import 'package:preuba_tecnica/screens/home_screen.dart';
 import 'package:preuba_tecnica/widgets/common/atoms/primary_button.dart';
 import 'package:preuba_tecnica/widgets/common/atoms/pt_label.dart';
-import 'package:preuba_tecnica/widgets/common/molecules/bottom_navigation.dart';
 import 'package:preuba_tecnica/widgets/home/molecules/app_bar_home_screen.dart';
 import 'package:preuba_tecnica/widgets/home/molecules/close_sesion_button.dart';
-import 'package:preuba_tecnica/widgets/home/organisms/fields_widget.dart';
-import 'package:preuba_tecnica/widgets/home/organisms/reservation_widget.dart';
-import 'package:preuba_tecnica/widgets/reservation/atoms/icon_label.dart';
+import 'package:preuba_tecnica/widgets/my_reservation/organisms/my_reservation_widget.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class MyReservationsScreen extends StatefulWidget {
+  const MyReservationsScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<MyReservationsScreen> createState() => _MyReservationsScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _MyReservationsScreenState extends State<MyReservationsScreen> {
   bool isOpenMenu = false;
   @override
   Widget build(BuildContext context) {
@@ -38,52 +35,57 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                   const SizedBox(
-                    height: 8,
+                    height: 40,
                   ),
-                  title('Hola Jossep!'),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 32),
+                    child: PrimaryButton(
+                      width: double.infinity,
+                      label: '',
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomeScreen(),
+                          ),
+                        );
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(
+                            Icons.calendar_today_outlined,
+                            color: Colors.white,
+                            size: 16,
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          PtLabel.normal(
+                            label: 'Programar Reserva',
+                            color: Colors.white,
+                            size: 16,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                   const SizedBox(
-                    height: 8,
+                    height: 40,
                   ),
-                  const Divider(),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  title('Canchas'),
+                  title('Mis Reservas'),
                   const SizedBox(
                     height: 16,
                   ),
                   Container(
-                    margin: const EdgeInsets.only(left: 8),
-                    height: 380,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: MockRepository.mockFields.length,
-                      itemBuilder: (context, index) {
-                        return FieldsWidget(
-                          model: MockRepository.mockFields[index],
-                        );
-                      },
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  const Divider(),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  title('Reservas programadas'),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  SizedBox(
-                    height: 300,
+                    padding: const EdgeInsets.symmetric(horizontal: 24),
+                    height: 700,
                     child: ListView.builder(
                       padding: EdgeInsets.zero,
                       scrollDirection: Axis.vertical,
                       itemCount: MockRepository.mockReservations.length,
                       itemBuilder: (context, index) {
-                        return ReservationWidget(
+                        return MyReservationWidget(
                           model: MockRepository.mockReservations[index],
                         );
                       },
@@ -96,13 +98,12 @@ class _HomeScreenState extends State<HomeScreen> {
           if (isOpenMenu) const CloseSesionButton(),
         ],
       ),
-      bottomNavigationBar: BottomNavigation(),
     );
   }
 
   Padding title(String title) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: PtLabel.bold(
         label: title,
         color: Colors.black,

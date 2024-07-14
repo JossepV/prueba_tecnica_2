@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:preuba_tecnica/widgets/common/molecules/card_circle_avatar.dart';
-import 'package:preuba_tecnica/widgets/home_screen.dart/atoms/logo.dart';
+import 'package:preuba_tecnica/widgets/home/atoms/logo.dart';
 
 class AppBarHomeScreen extends StatelessWidget {
-  const AppBarHomeScreen({super.key});
+  const AppBarHomeScreen({super.key, required this.onTapMenu});
+  final VoidCallback onTapMenu;
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +26,9 @@ class AppBarHomeScreen extends StatelessWidget {
           const Logo(),
           const Expanded(child: SizedBox()),
           const CardCircleAvatar(
-            radius: 12,
-            imageUrl:
-                'https://as1.ftcdn.net/v2/jpg/02/43/12/34/1000_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg'
-          ),
+              radius: 12,
+              imageUrl:
+                  'https://as1.ftcdn.net/v2/jpg/02/43/12/34/1000_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg'),
           const SizedBox(
             width: 10,
           ),
@@ -40,6 +40,7 @@ class AppBarHomeScreen extends StatelessWidget {
             width: 10,
           ),
           GestureDetector(
+            onTap: onTapMenu,
             child: const Icon(
               Icons.menu,
               color: Colors.white,

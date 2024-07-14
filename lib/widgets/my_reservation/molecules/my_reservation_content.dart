@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:preuba_tecnica/models/reservation_model.dart';
 import 'package:preuba_tecnica/widgets/common/atoms/pt_label.dart';
-import 'package:preuba_tecnica/widgets/home_screen.dart/atoms/field_date_section.dart';
-import 'package:preuba_tecnica/widgets/home_screen.dart/atoms/total_time_and_price_reservation_widget.dart';
-import 'package:preuba_tecnica/widgets/home_screen.dart/molecules/reserver_widget.dart';
+import 'package:preuba_tecnica/widgets/home/atoms/field_date_section.dart';
+import 'package:preuba_tecnica/widgets/home/atoms/total_time_and_price_reservation_widget.dart';
+import 'package:preuba_tecnica/widgets/home/molecules/reserver_widget.dart';
 
-class ReservationContent extends StatelessWidget {
-  const ReservationContent({super.key, required this.model});
+class MyReservationContent extends StatelessWidget {
+  const MyReservationContent({super.key, required this.model});
   final ReservationModel model;
   @override
   Widget build(BuildContext context) {
@@ -17,6 +17,14 @@ class ReservationContent extends StatelessWidget {
           label: model.field.name,
           color: Colors.black,
           size: 16,
+        ),
+        const SizedBox(
+          height: 6,
+        ),
+        PtLabel.normal(
+          label: model.field.type,
+          color: Colors.black,
+          size: 12,
         ),
         const SizedBox(
           height: 6,
@@ -34,7 +42,9 @@ class ReservationContent extends StatelessWidget {
           height: 6,
         ),
         TotalTimeAndPriceReservationWidget(
-            price: model.totalPrice, hours: model.totalhour)
+          price: model.totalPrice,
+          hours: model.totalhour,
+        )
       ],
     );
   }
