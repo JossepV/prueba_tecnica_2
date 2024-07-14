@@ -22,7 +22,7 @@ class LandingScreen extends StatelessWidget {
                   'https://as2.ftcdn.net/v2/jpg/00/86/61/69/1000_F_86616923_kMsbzu8AILuMwcWMaybWUbbxLsEVTya3.jpg',
             ),
           ),
-          Positioned(top: 150, right: 50, left: 50, child: LogoLanding()),
+          const Positioned(top: 150, right: 50, left: 50, child: LogoLanding()),
           Positioned(
             bottom: 50,
             left: 32,

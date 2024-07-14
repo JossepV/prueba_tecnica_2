@@ -23,7 +23,7 @@ class CustomDropdownItem extends StatelessWidget {
         decoration: BoxDecoration(
           
           border: withBorderdown
-              ? Border(
+              ? const Border(
                   bottom: BorderSide(
                     width: 0.5,
                     color: Colors.black,

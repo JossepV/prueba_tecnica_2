@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:preuba_tecnica/controllers/reservation_provider.dart';
 import 'package:preuba_tecnica/data_mock/mock_repository.dart';
 import 'package:preuba_tecnica/screens/landing_screen.dart';
-import 'package:preuba_tecnica/screens/login_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {

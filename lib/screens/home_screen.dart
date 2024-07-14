@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:preuba_tecnica/data_mock/mock_repository.dart';
-import 'package:preuba_tecnica/screens/login_screen.dart';
-import 'package:preuba_tecnica/widgets/common/atoms/primary_button.dart';
 import 'package:preuba_tecnica/widgets/common/atoms/pt_label.dart';
 import 'package:preuba_tecnica/widgets/common/molecules/bottom_navigation.dart';
 import 'package:preuba_tecnica/widgets/home/molecules/app_bar_home_screen.dart';
 import 'package:preuba_tecnica/widgets/home/molecules/close_sesion_button.dart';
 import 'package:preuba_tecnica/widgets/home/organisms/fields_widget.dart';
 import 'package:preuba_tecnica/widgets/home/organisms/reservation_widget.dart';
-import 'package:preuba_tecnica/widgets/reservation/atoms/icon_label.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -96,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
           if (isOpenMenu) const CloseSesionButton(),
         ],
       ),
-      bottomNavigationBar: BottomNavigation(),
+      bottomNavigationBar: const BottomNavigation(),
     );
   }
 

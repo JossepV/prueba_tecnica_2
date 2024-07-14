@@ -20,11 +20,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 8,horizontal: 32),
+      padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 32),
       height: 80,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.vertical(
+        borderRadius: const BorderRadius.vertical(
           top: Radius.circular(16),
         ),
         boxShadow: [
@@ -32,7 +32,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
             color: Colors.black.withOpacity(0.1),
             blurRadius: 6,
             spreadRadius: 2,
-            offset: Offset(0, -3),
+            offset: const Offset(0, -3),
           ),
         ],
       ),
