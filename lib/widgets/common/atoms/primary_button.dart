@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:preuba_tecnica/widgets/common/atoms/pt_label.dart';
 
@@ -16,12 +15,14 @@ class PrimaryButton extends StatefulWidget {
     this.radius,
     this.colorsInactive,
     this.child,
+    this.withBorder = false,
   });
   final String label;
   final double? width;
   final double? height;
   final double? labelSize;
   final bool isActive;
+  final bool withBorder;
   final VoidCallback onTap;
   final List<Color>? colors;
   final List<Color>? colorsInactive;
@@ -63,13 +64,13 @@ class PrimaryButtonState extends State<PrimaryButton>
   Widget build(BuildContext context) {
     final List<Color> colorButton = widget.colors ??
         [
-         Colors.green,
-         Colors.green,
+          Colors.green,
+          Colors.green,
         ];
     final List<Color> colorButtonInactive = widget.colorsInactive ??
         [
-         Colors.white.withOpacity(0.5),
-         Colors.white.withOpacity(0.5),
+          Colors.green.withOpacity(0.5),
+          Colors.green.withOpacity(0.5),
         ];
 
     final colorLabel = widget.isActive
@@ -94,6 +95,7 @@ class PrimaryButtonState extends State<PrimaryButton>
           decoration: BoxDecoration(
             borderRadius:
                 BorderRadius.all(Radius.circular(widget.radius ?? 16)),
+                border: widget.withBorder ? Border.all(color: Colors.black) : null,
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,

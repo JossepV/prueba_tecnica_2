@@ -16,7 +16,8 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          const Positioned(top: 0, left: 0, right: 0, child: CustomCurverContainer()),
+          const Positioned(
+              top: 0, left: 0, right: 0, child: CustomCurverContainer()),
           Positioned.fill(
             top: 45,
             left: 32,
@@ -27,7 +28,9 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   CustomIconButton(
                     radius: 12,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
                     size: 34,
                     backgroundColor: Colors.green,
                     icon: Icons.arrow_back,
